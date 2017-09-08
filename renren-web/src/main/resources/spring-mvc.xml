@@ -14,9 +14,27 @@
      	http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
 
 	<context:component-scan base-package="io.renren" />
+	<context:component-scan base-package="io.renren.controller.swagger" />
 	<context:annotation-config />
 	<mvc:default-servlet-handler />
 	<aop:aspectj-autoproxy proxy-target-class="true" />
+	
+	<!-- 对静态资源文件的访问 restful -->
+	<mvc:resources mapping="/static/**" location="/,/static/" />
+	<mvc:resources mapping="/plugins/**" location="/,/plugins/" />
+	<mvc:resources mapping="/swagger/**" location="/,/swagger/" />  
+    <mvc:resources mapping="/swagger-ui.html" location="classpath:/META-INF/resources/"/>  
+    <mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/>  
+	<mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>  
+	
+	<mvc:resources mapping="/admin/**" location="/,/admin/" />
+	<mvc:resources mapping="/static/**" location="/,/static/" />
+	<mvc:resources mapping="/plugins/**" location="/,/plugins/" />
+	<mvc:resources mapping="/uploadFiles/**" location="/,/uploadFiles/" />
+	<mvc:resources mapping="/swagger/**" location="/,/swagger/" />  
+    <mvc:resources mapping="/swagger-ui.html" location="classpath:/META-INF/resources/"/>  
+    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
+	
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">
             <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">

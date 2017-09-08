@@ -48,6 +48,13 @@
 	        	/sys/login=anon
 	        	/captcha.jpg=anon
 	        	/**=authc
+	        	/swagger-ui.html = anon
+	        	/swagger/** = anon
+				/api/** = anon
+				/api-docs = anon
+				/webjars/** = anon
+				/swagger-resources/** = anon
+				/v2/** = anon
 	        </value>
 	    </property>
 	</bean>

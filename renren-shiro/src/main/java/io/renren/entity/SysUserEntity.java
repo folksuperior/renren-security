@@ -195,5 +195,14 @@ public class SysUserEntity implements Serializable {
 	public void setCreateUserId(Long createUserId) {
 		this.createUserId = createUserId;
 	}
+
+	@Override
+	public String toString() {
+		return "SysUserEntity [userId=" + userId + ", username=" + username + ", email=" + email + ", mobile=" + mobile
+				+ ", status=" + status + ", roleIdList=" + roleIdList + ", createUserId=" + createUserId
+				+ ", createTime=" + createTime + "]";
+	}
+	
+	
 	
 }
